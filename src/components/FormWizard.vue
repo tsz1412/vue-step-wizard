@@ -1,5 +1,6 @@
 <template>
     <div class="vue-step-wizard">
+      foo
         <div class="step-header">
         <div class="step-progress">
             <div class="bar progressbar" :style="{ width: progress + '%' }">
