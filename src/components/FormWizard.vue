@@ -1,12 +1,11 @@
 <template>
     <div class="vue-step-wizard">
-      foo
         <div class="step-header">
-        <div class="step-progress">
+        <div class="step-progress" v-if="this.$props.showProgressBar">
             <div class="bar progressbar" :style="{ width: progress + '%' }">
             </div>
         </div>
-        <ul class="step-pills">
+        <ul class="step-pills" v-if="this.$props.showProgressPills">
             <li @click.prevent.stop="selectTab(index)" class="step-item" :class="{ 'active': tab.isActive, 'validated': tab.isValidated }" v-for="(tab, index) in tabs" v-bind:key="`tab-${index}`">
                 <a class="step-link" href="#">
                         <span class="tabStatus">{{index+1}} </span> 
@@ -38,6 +37,10 @@
 import { store } from "./store.js";
 export default {
     name: 'form-wizard',
+    props: {
+      'showProgressPills': Boolean,
+      'showProgressBar' : Boolean
+    },
     data(){
         return{
             tabs: [],

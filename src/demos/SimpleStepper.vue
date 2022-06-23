@@ -1,5 +1,5 @@
 <template>
-    <form-wizard ref="formwizard" @onComplete="onComplete" @onNextStep="nextStep" @onPreviousStep="previousStep" @onReset="reset">
+    <form-wizard :show-progress-bar="true" :show-progress-pills="true" ref="formwizard" @onComplete="onComplete" @onNextStep="nextStep" @onPreviousStep="previousStep" @onReset="reset">
         <tab-content title="About You" :selected="true">
             <div class="form-group">
                 <label for="fullName">Full Name</label>
